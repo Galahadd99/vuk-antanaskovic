@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Vuk Antanaskovic | Ultra Hr</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Bucky Maler">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="#0">
+            <img src="assets/img/logo.png" alt="Global">
+            <p>Vuk Antanaskovic</p>
+          </a>
+          <button class="header--cta cta">Hire Me</button>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Images</span></li>
+            <li><span>Description</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+                <h1>Ultra HR System</h1>
+                <div class="gallery">
+                    <img src="assets/img/hr1.PNG" alt="Slika 1" onclick="openLightbox('assets/img/hr1.PNG')">
+                    <img src="assets/img/hr2.PNG" alt="Slika 2" onclick="openLightbox('assets/img/hr2.PNG')">
+                    <img src="assets/img/hr3.PNG" alt="Slika 3" onclick="openLightbox('assets/img/hr3.PNG')">
+                    <img src="assets/img/hr4.PNG" alt="Slika 3" onclick="openLightbox('assets/img/hr4.PNG')">
+                    <!-- Dodajte još slika prema potrebi -->
+                </div>
+                
+                <!-- Lightbox za prikaz slika uvećanih -->
+                <div class="lightbox" onclick="closeLightbox()">
+                    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+                    <img id="lightbox-img" src="" alt="Uvećana slika">
+                </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="work">
+                <h1>Ultra Hr System</h1>
+                <p>This is a system built using ASP.NET technology, comprising a Web API, an MS SQL Server database, and an Angular web application. It was commissioned by a company looking to replace their existing outdated software with a more user-friendly and feature-rich solution. The system implements authorizations with multiple roles and involves various entities. What sets this HR system apart is that the HR Admin can independently define who needs approval for annual leave or time sheets. The system also includes notifications, both via email and in real-time within the application. The entire software is still in development, but if you are interested in learning more, feel free to reach out, and I'll be happy to share more information with you.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="home-btn" onclick="goHome()">
+        <img src="assets/img/house-symbol-home-icon-sign-design-free-png.webp" alt="">
+    </div>
+  </div>
+  <ul class="outer-nav">
+    <li class="is-active">Images</li>
+    <li>Description</li>
+  </ul>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+</body>
+</html>
+
+<script>
+  function sendMail(){
+    window.location.href = 'mailto:vuk.antanaskovic9@gmail.com';
+  }
+  function goHome(){
+    window.location.href = 'index.html';
+  }
+</script>
+
+<style>
+    /* Stilizacija galerije */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        max-height: 80vh;
+        overflow: auto;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    /* Stilizacija lightbox-a */
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        justify-content: center;
+        align-items: center;
+        z-index: 99999 !important;
+    }
+
+    .lightbox img {
+        max-width: 80%;
+        max-height: 80%;
+        z-index: 99999 !important;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .home-btn{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: rgb(66, 66, 66);
+        bottom: 10px;
+        right: 10px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .home-btn img{
+        width: 30px;
+        height: auto;
+        margin: 12px 0;
+    }
+</style>
+
+<script>
+    function openLightbox(imageSrc) {
+        document.getElementById('lightbox-img').src = imageSrc;
+        document.querySelector('.lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+        document.querySelector('.lightbox').style.display = 'none';
+    }
+</script>
+
